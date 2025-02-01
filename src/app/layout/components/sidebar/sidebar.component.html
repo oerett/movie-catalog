@@ -1,0 +1,12 @@
+<div class="sidenav-container">
+    <mat-sidenav mode="side" opened="true" *ngIf="isShowing">
+        <div (mouseenter)="mouseenter()" (mouseleave)="mouseleave()">
+            <mat-nav-list>
+                <div [ngClass]="{'expanded' : showSubmenu}" *ngIf="isShowing || isExpanded">
+                    <a mat-list-item href="/dashboard/main">Dashboard</a>
+                    <a mat-list-item href="/movie-catalog/database">Movie Catalog</a>
+                </div>
+            </mat-nav-list>
+        </div>
+    </mat-sidenav>
+</div>

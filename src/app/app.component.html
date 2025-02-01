@@ -1,0 +1,9 @@
+<mat-sidenav-container class="main-container">
+    <mat-sidenav mode="side" [opened]="isExpanded" class="sidenav-menu">
+        <app-sidebar [isExpanded]="isExpanded"></app-sidebar>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <app-toolbar (toggleSidebar)="toggleSidebar()"> </app-toolbar>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>

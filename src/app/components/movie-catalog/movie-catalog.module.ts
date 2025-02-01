@@ -1,34 +1,27 @@
 import { NgModule } from '@angular/core';
-import { Routes } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { MovieCatalogComponent } from './movie-catalog.component';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { MovieCatalogService } from './movie-catalog.service';
 
 const routes: Routes = [
   {
-    path: '',
-    data: { breadcrumb: 'Movie Catalog' },
-    children: [
-      {
-        path: '',
-        component: MovieCatalogComponent,
-        data: { breadcrumb: 'Movie Catalog' },
-      },
-      {
-        path: 'database',
-        children: [
-          {
-            path: '',
-            component: MovieCatalogComponent,
-            data: { breadcrumb: null },
-          },
-        ],
-      },
-    ],
+    path: 'database',
+    component: MovieCatalogComponent,
   },
 ];
 
 @NgModule({
   declarations: [MovieCatalogComponent],
-  imports: [CommonModule],
+  imports: [
+    RouterModule.forChild(routes),
+    CommonModule,
+    FormsModule,
+    HttpClientModule,
+  ],
+  providers: [MovieCatalogService],
+  exports: [MovieCatalogComponent],
 })
 export class MovieCatalogModule {}

@@ -1,1 +1,19 @@
-<p>movie-catalog works!</p>
+<div class="movie-search-container">
+    <form (ngSubmit)="searchMovies(title)" class="movie-search-form">
+        <label for="search" class="search-label">Search Movies:</label>
+        <div class="search-input-container">
+            <input type="text" id="search" name="search" [(ngModel)]="title" class="search-input"
+                placeholder="Enter movie title" required (input)="checkIfItsCleaned(title)" />
+            <button type="submit" class="search-button">Search</button>
+        </div>
+    </form>
+</div>
+
+<div id="movies" class="movie-list">
+    <div *ngFor="let movie of movies" class="movie-card">
+        <h3 class="movie-title">{{ movie.Title }}</h3>
+        <a [href]="'https://www.imdb.com/title/' + movie.imdbID" target="_blank" class="movie-link">
+            <img [src]="movie.Poster" [alt]="movie.Title" class="movie-poster" />
+        </a>
+    </div>
+</div>

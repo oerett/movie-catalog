@@ -5,8 +5,12 @@ import { RouterOutlet } from '@angular/router';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
-  standalone: false
+  standalone: false,
 })
 export class AppComponent {
-  title = 'movie-catalog';
+  isExpanded = true;
+
+  toggleSidebar() {
+    this.isExpanded = !this.isExpanded;
+  }
 }
