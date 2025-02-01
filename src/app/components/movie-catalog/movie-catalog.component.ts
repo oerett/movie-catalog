@@ -14,11 +14,6 @@ export class MovieCatalogComponent {
   constructor(private movieService: MovieCatalogService) {}
 
   searchMovies(title: string) {
-    if (title.trim() === '') {
-      this.movies = [];
-      return;
-    }
-
     this.movieService.SearchMovies(title).subscribe((res: any) => {
       this.movies = res.Response === 'True' ? res.Search.slice(0, 3) : [];
     });
