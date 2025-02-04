@@ -5,7 +5,6 @@ import { AppComponent } from './app.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatToolbarModule } from '@angular/material/toolbar';
 import { SideBarModule } from './layout/components/sidebar/sidebar.module';
 import { ToolbarModule } from './layout/components/toolbar/toolbar.module';
 import { DashboardModule } from './components/dashboard/dashboard.module';
